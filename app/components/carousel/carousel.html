@@ -1,9 +1,9 @@
 <div class="carousel">
-    <div class="slides">
-        <slide ng-repeat="data in ctrl.config.slides">
-            <h1>{{data.country}}</h1>
-            <img ng-src="{{data.flag}}" />
-        </slide>
+    <div id="slides">
+        <slide ng-repeat="data in ctrl.config.slides"></slide>
     </div>
-    <div class="controls"></div>
+    <div id="controls">
+        <a id="continue">continue</a>
+        <a id="next">next</a>
+    </div>
 </div>
