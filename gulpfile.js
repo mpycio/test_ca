@@ -122,6 +122,12 @@ gulp.task('connect', function() {
   });
 });
 
+gulp.task('default', ['clean'], function() {
+  gulp.start(
+    'index'
+  );
+});
+
 gulp.task('build:dev', ['clean'], function() {
   gulp.start(
     'index',
