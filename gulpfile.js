@@ -85,7 +85,10 @@ gulp.task('index', ['html-copy', 'assets-copy', 'app-css', 'vendor-css', 'app-js
   ], {read: false});
 
   return gulp.src('./app/index.html')
-    .pipe(inject(gulp.src('./dist/js/vendor.js', {read: false}), {relative: true, ignorePath: '../dist/'}))
+    .pipe(inject(gulp.src('./dist/js/vendor.js', {read: false}), {
+      relative: true, ignorePath: '../dist/',
+      starttag: '<!-- inject:vendor:{{ext}} -->'
+    }))
     .pipe(inject(sources, {relative: true, ignorePath: '../dist'}))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
