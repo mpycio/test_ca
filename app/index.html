@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href="/">
+  <base href="./">
   <!-- inject:css -->
   <!-- endinject -->
 </head>
@@ -33,7 +33,13 @@
   <!-- inject:js -->
   <!-- endinject -->
   <script type="text/javascript">
+
     app.initialize();
+
+    if (!window.hasOwnProperty('cordova')) {
+      // if in browser pretend deviceready fired to bootstrap angular
+      app.onDeviceReady()
+    }
   </script>
 </body>
 </html>
